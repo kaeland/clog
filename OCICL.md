@@ -19,31 +19,36 @@ ocicl install clog
 Note for Windows: unzip https://rabbibotton.github.io/clog/clogframe.zip for
                   needed dlls in directory
 
-Then start to dev with the CLOG Builder:
+Then compile the CLOG Builder:
 
 ```
-sbcl --userinit init --eval "(asdf:load-system :clog/tools)" --eval "(clog-tools:clog-builder :port 0 :app t)"
+sbcl --userinit init --eval "(asdf:load-system :clog/tools)" --quit
 ```
-and after first run can use "bash run-ocicl" (or chmod 775 run-oicl to make the batch file executable)
+
+Run "bash edit-ocicl" (or chmod 775 edit-oicl to make the batch file executable)
 
 (or replace ecl for sbcl)
 
 On Windows:
 
 ```
-sbcl --userinit init --eval "(setf asdf:*compile-file-failure-behaviour* :warn)" --eval "(asdf:load-system :clog/tools)" --eval "(clog-tools:clog-builder :port 0 :app t)"
+sbcl --userinit init --eval "(setf asdf:*compile-file-failure-behaviour* :warn)" --eval "(asdf:load-system :clog/tools)" --quit"
 ```
-and after first run can use "run-ocicl.bat"
+
+Run "edit-ocicl.bat"
 
 
 Update ocicl libraries like CLOG with:
 
 ```
-./updat-ocicl
+./update-ocicl
 ```
 
 Only check the systems.cvs file in, on the systems directory. A new check out
 can run the setup-ocicl script to load the libraries again.
+
+The script run-ocicl or run-ocicl.bat can be used to directly start you application with out the builder.
+
 
 I N S T A L L
 =============
